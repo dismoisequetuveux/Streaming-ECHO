@@ -1,0 +1,216 @@
+/* Général */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; /* Empêche le décalage horizontal */
+    position: relative;
+}
+
+/* Barres lumineuses sur les côtés du body */
+body::before, body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    box-shadow: 0 0 20px 5px rgba(0, 102, 255, 0.6);
+    animation: glow 3s infinite alternate;
+    z-index: -1;
+}
+
+body::before {
+    left: 0;
+}
+
+body::after {
+    right: 0;
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px 2px rgba(0, 102, 255, 0.3);
+    }
+    100% {
+        box-shadow: 0 0 20px 10px rgba(0, 102, 255, 0.8);
+    }
+}
+
+.logo {
+	display: block; 
+	margin: 0 auto; 
+	max-width: 300px; 
+	height: auto;
+	padding: 20px; 
+	transition: transform 0.3s, filter 0.3s; 
+}
+
+/* Main */
+main {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 50px; /* Taille augmentée */
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+}
+
+#back-button {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	font-size: 18px;
+	color: white;
+	background: rgba(0, 0, 0, 0.5);
+	padding: 10px 20px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#back-button:hover {
+	background: rgba(255, 255, 255, 0.2);
+}
+/* Conteneurs des saisons */
+.seasons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Plus d'espace entre les saisons */
+    align-items: center;
+}
+
+/* Structure des saisons */
+.season {
+    display: flex;
+    flex-direction: column; /* Les éléments sont alignés verticalement */
+    align-items: center;
+    gap: 20px; /* Espace entre le titre et l'image */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 300px; /* Largeur accrue pour les saisons */
+}
+
+/* Titre de saison */
+.season-title {
+    font-size: 28px; /* Taille accrue des titres de saisons */
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.season-title:hover {
+    color: #66ccff;
+}
+
+/* Images des saisons */
+.season img {
+    width: 280px; /* Taille des images de saisons accrue */
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.season img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.6);
+}
+
+/* Conteneurs des épisodes */
+.episodes {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Plus d'espace entre les épisodes */
+    align-items: center;
+}
+
+/* Structure des épisodes */
+.episode {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; /* Espace entre le titre, le résumé et l'image */
+    transition: transform 0.3s, box-shadow 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 300px; /* Taille accrue pour les épisodes */
+}
+
+/* Titre d'épisode */
+.episode-title {
+    font-weight: bold;
+    font-size: 28px; /* Taille accrue des titres d'épisode */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.episode-title:hover {
+    color: #66ccff;
+}
+
+/* Images des épisodes */
+.episode img {
+    width: 280px; /* Taille des images d'épisodes accrue */
+    border-radius: 10px;
+    transition: transform 0.3s, filter 0.3s;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+}
+
+.episode img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.2);
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.6);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgb(30, 30, 30);
+    font-size: 18px;
+    color: #ccc;
+    position: relative;
+    z-index: 1; /* Place le footer au-dessus du body */
+}
+
+footer a {
+    color: #61dafb;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.video-player {
+    margin: 0;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.video-player video {
+    width: 60%;
+    height: auto;
+    max-height: 90%;
+}
+
+.video-player video:hover {
+    box-shadow: 0 0 15px rgba(0, 102, 255, 0.6);
+}

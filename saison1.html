@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saison 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div id="back-button" onclick="window.location.href='index.html'">← Retour</div>
+    <img src="images/logo.png" alt="Logo du site" class="logo">
+    <main>
+        <section class="episodes">
+            <h1>Épisodes</h1>
+
+            <!-- Épisode 1 -->
+            <div class="episode">
+                <p class="episode-title" onclick="toggleTeaser(this)">Épisode 1 : Titre</p>
+                <div class="episode-summary" style="display: none;">
+                    Voici le résumé de l'épisode 1. Un début intrigant et palpitant !
+                </div>
+                <img src="images/episode1.png" alt="Épisode 1" onclick="window.location.href='player.html?video=S1E1'">
+            </div>
+
+            <!-- Épisode 2 -->
+            <div class="episode">
+                <p class="episode-title" onclick="toggleTeaser(this)">Épisode 2 : Titre</p>
+                <div class="episode-summary" style="display: none;">
+                    Voici le résumé de l'épisode 2. L'action monte d'un cran !
+                </div>
+                <img src="images/episode2.png" alt="Épisode 2" onclick="window.location.href='player.html?video=S1E2'">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><a href="#">Conditions Générales d'Utilisation</a></p>
+        <p><a href="#">Contact</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
